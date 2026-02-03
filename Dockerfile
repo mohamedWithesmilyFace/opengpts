@@ -37,7 +37,7 @@ COPY ./backend/pyproject.toml ./backend/poetry.lock* ./
 # Install dependencies
 # --only main: Skip installing packages listed in the [tool.poetry.dev-dependencies] section
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --only main
+    && poetry install --no-interaction --no-ansi --only main --no-root
 
 # Copy the rest of backend
 COPY ./backend .
